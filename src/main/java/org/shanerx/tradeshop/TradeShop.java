@@ -26,6 +26,8 @@
 package org.shanerx.tradeshop;
 
 import com.google.common.collect.Lists;
+import com.sk89q.worldguard.WorldGuard;
+import com.sk89q.worldguard.protection.flags.registry.FlagRegistry;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.PluginCommand;
@@ -37,6 +39,7 @@ import org.shanerx.tradeshop.data.config.ConfigManager;
 import org.shanerx.tradeshop.data.config.Language;
 import org.shanerx.tradeshop.data.config.Setting;
 import org.shanerx.tradeshop.data.storage.DataStorage;
+import org.shanerx.tradeshop.integration.WorldguardIntegration;
 import org.shanerx.tradeshop.player.JoinEventListener;
 import org.shanerx.tradeshop.player.Permissions;
 import org.shanerx.tradeshop.shop.ShopSign;
@@ -55,15 +58,13 @@ import org.shanerx.tradeshop.utils.management.VarManager;
 import org.shanerx.tradeshop.utils.versionmanagement.Updater;
 import org.shanerx.tradeshop.utils.versionmanagement.Version;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 
 public class TradeShop extends JavaPlugin {
 
     private VarManager varManager;
+    public WorldguardIntegration worldguardIntegration = null;
 
     public static TradeShop getPlugin() {
         TradeShop plugin = null;
@@ -77,6 +78,11 @@ public class TradeShop extends JavaPlugin {
             }
 
         return plugin;
+    }
+
+    @Override
+    public void onLoad() {
+        worldguardIntegration = new WorldguardIntegration();
     }
 
     @Override
@@ -107,7 +113,9 @@ public class TradeShop extends JavaPlugin {
             getLogger().warning("Metrics are disabled! Please consider enabling them to support the authors!");
         }
 
-        aliasCheck("ts");
+        aliasCheck("n");
+
+        if(worldguardIntegration != null) worldguardIntegration.init();
     }
 
     @Override
@@ -157,8 +165,8 @@ public class TradeShop extends JavaPlugin {
             pm.registerEvents(new PaperShopProtectionListener(), this);
         }
 
-        getCommand("tradeshop").setExecutor(new CommandCaller(this));
-        getCommand("tradeshop").setTabCompleter(new CommandTabCaller(this));
+        getCommand("negozi").setExecutor(new CommandCaller(this));
+        getCommand("negozi").setTabCompleter(new CommandTabCaller(this));
     }
 
     private void aliasCheck(String conflictAlias) {
@@ -173,9 +181,9 @@ public class TradeShop extends JavaPlugin {
             conflictingCMDs.forEach((k, v) -> {
                 PluginCommand tsAlias = getCommand(conflictAlias);
                 List<String> aliases = Lists.newArrayList(v);
-                aliases.remove("ts");
+                aliases.remove("n");
 
-                String newAlias = "ts", addition = newAlias.substring(1, newAlias.length() - 1), pl = tsAlias.getPlugin().getName();
+                /*String newAlias = "n", addition = newAlias.substring(1, newAlias.length() - 1), pl = tsAlias.getPlugin().getName();
 
                 while (getCommand(newAlias) != null) {
                     //Get the character in the plugin name at the index after the first string of the existing addition
@@ -186,8 +194,8 @@ public class TradeShop extends JavaPlugin {
                     //take first letter of conflicting alias and add the addition to that
                     newAlias = newAlias.charAt(0) + addition;
                 }
-                aliases.add(newAlias);
-                tsAlias.setAliases(aliases);
+                aliases.add(newAlias);*/
+                tsAlias.setAliases(new ArrayList<>());
             });
         }
     }

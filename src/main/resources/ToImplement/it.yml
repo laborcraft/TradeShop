@@ -1,0 +1,134 @@
+############################
+#    TradeShop Messages    #
+############################
+# |    Metrics    |
+# ^^^^^^^^^^^^^^^^^
+metrics:
+  message: "&7    --- &bStatistiche &7---\n     ---------------\n "
+  counter: '&7Ci sono &b%VALUE% %KEY%.'
+  times-counter: ''
+  version: '&b%KEY% &7versione: &b%VALUE%.'
+# Version of the current config file.
+# Do not change!
+message-version: 1.3
+# This currently does not change anything in the message files, but is used in metrics so that we can see what languages we should try to provide built in support for in the future.
+# Please use codes as listed at: https://www.andiamo.co.uk/resources/iso-language-codes/
+language: it
+
+
+change-closed: '&7Il negozio è ora &l&bCHIUSO&r&7.'
+player-locked: '&7Non puoi fare più di 1 scambio ogni 0.5s.'
+change-open: '&Il negozio è ora &l&bAPERTO&r&7.'
+# Text to display when a player places a TradeSign above an empty chest:
+empty-ts-on-setup: '&cNegozio vuoto, ricordati di riempirlo!'
+existing-shop: '&cQuesto contenitore o cartello è già collegato a un negozio.'
+feature-disabled: '&cQuesta feature non è attiva su questo server!'
+# Text to display when the player is not holding anything
+held-empty: '&bNon stai tenendo in mano niente.'
+# Text to display when a shop failed creation due to an illegal item
+illegal-item: '&cNon puoi usare uno o più di quegli item nei negozi.'
+# Text to display when a shop failed creation due to using a shulker box when the shop uses it for storage:
+no-shulker-item: '&cNon puoi usare una shulker box mentre il negozio la usa come contenitore.'
+# Text to display when the player does not have enough items:
+insufficient-items: |-
+  &cTi mancano i seguenti oggetti per fare lo scambio:
+  {%MISSINGITEMS%=  &b%AMOUNT% %ITEM%}
+# Text to display when the shop does not have enough items:
+shop-insufficient-items: |-
+  &cA questo negozio mancano i seguenti oggetti per fare lo scambio:
+  {%MISSINGITEMS%=  &b%AMOUNT% %ITEM%}
+# Text to display when invalid arguments are submitted through the "/tradeshop" command:
+invalid-arguments: '&bUsa &6/negozi aiuto &bper mostrare la pagina di aiuto!'
+item-added: '&7Item aggiunto con successo al negozio.'
+item-not-removed: '&cNon è stato possibile rimuovere l''oggetto dal negozio.'
+item-removed: '&7Ïtem rimosso con successo dal negozio.'
+missing-chest: '&cAl tuo negozio manca una cassa.'
+# Text to display when a shop sign failed creation due to missing an item
+missing-item: '&cAl tuo cartello manca un oggetto di scambio.'
+multi-amount: '&7Il tuo moltiplicatore di scambi è %AMOUNT%.'
+multi-update: '&7Il tuo moltiplicatore di scambi è stato impostato a%AMOUNT%.'
+# Text to display when a player attempts to place a sign without placing the chest first:
+no-chest: '&cDevi mettere una cassa sotto al cartello!'
+# Text to display when a player attempts to run administrator commands:
+no-command-permission: '&cNon hai il permesso!'
+no-shop-permission: '&cNon hai il permesso di modificare quel negozio!'
+# Text to display when a player attempts to trade while not having the `Trade` permission:
+no-trade-permission: '&cNon puoi usare i negozi!'
+# Text to display when a player is too far from a shop
+no-sighted-shop: '&cNon ci sono negozi vicini!'
+# Text to display when a player attempts to setup a shoptype they are not allowed to create:
+no-ts-create-permission: '&cNon hai il permesso di creare questo tipo di negozio!'
+# Text to display when a player attempts to destroy a shop they do not own:
+no-ts-destroy: '&cNon puoi distruggere quel negozio!'
+# Text to display when a player attempts to destroy a block with a shop sign attached to it:
+destroy-shop-sign-first: '&cDevi distruggere il cartello prima.'
+# Text to display when a player attempts to open a shop they do not own nor have been granted access to:
+no-ts-open: '&cQuel negozio non ti appartiene.'
+# Text to display upon a successful trade:
+on-trade: "&7%SELLER% ti ha venduto: \n{%RECEIVEDLINES%=  &b%AMOUNT% %ITEM%} \n&7in cambio di:\
+  \ \n{%GIVENLINES%=  &b%AMOUNT% %ITEM%}"
+# Text to display when the players inventory is too full to receive the trade:
+player-full: '&cIl tuo inventario è pieno, per favore fai altro spazio prima di scambiare oggetti!'
+player-not-found: '&cImpossibile trovare quel giocatore.'
+# Text to display when console tries to use a player only command
+player-only-command: '&bQuesto comando è disponibile solo per i giocatori.'
+plugin-behind: '&cPer favore aggiorna TradeShop.'
+# Text to display when a player tries to buy form a shop in which they are a user
+self-owned: '&cNon puoi comprare da un negozio di cui sei un utente.'
+# Text to display on "/tradeshop setup":
+setup-help: "\n&2Impostare un negozio è facile! Segui questi passi:\n \n&21. &bPiazza una cassa.\n\
+  &22. &bPiazza un cartello sopra o attorno la cassa.\n&23. &bSCrivi, nella prima\
+  \ linea del cartello:\n&6 [%HEADER%]\n&24. &bUsa i comandi &faddProduct <numero>\
+  \ &be &faddCost <numero> &bper impostare rispettivamente ciò che vendi e ciò che\
+  \ compri."
+shop-closed: '&cQuesto negozio è attualmente chiuso.'
+# Text to display when the shop does not have enough stock:
+shop-empty: '&cQuesto prodotto è esaurito!'
+# Text to display when the shop storage is full:
+shop-full: '&cQuesto negozio è pieno! Contatta il proprietario per farlo svuotare!'
+shop-item-list: |-
+  &7%TYPE% del negozio:
+  %LIST%
+# Text to display when a player uses '/ts toggle'
+# Available variables are: %TYPE% %NEWTYPE%
+shop-type-switched: '&7Il tipo di negozio è stato cambiato a %NEWTYPE%.'
+# Text to display when a player successfully creates a TradeShop:
+successful-setup: '&7Hai creato un negozio!'
+too-many-chests: '&cCi sono troppi negozi in questo chunk, non ne puoi aggiungere altri.'
+too-many-items: '&cQuesto negozio non può accettare altri %SIDE% oggetti!'
+# Text to display when shop users have been updated.
+updated-shop-users: "&7Gli utenti del negozio sono stati aggiornati: \n{%UPDATEDSHOPS%=  %SHOP% -|- %STATUS%}"
+pdated-shop-users-successful: ''
+# Text to display when shop users could not be added for an unknown reason.
+updated-shop-users-failed: '&cFallito'
+# Text to display when shop users could not be added due to the shop having max user capacity.
+updated-shop-users-failed-capacity: '&cMassima capacità'
+# Text to display when shop users could not be added because they are already a user on the shop.
+updated-shop-users-failed-existing: '&bGiocatore già esistente'
+# Text to display when shop users could not be removed because the user was not on the shop.
+updated-shop-users-failed-missing: '&bGiocatore mancante'
+# Text to display when players use the who command
+who-message: |-
+  &6Gli utenti del negozio sono:
+  &2Proprietario: &b%OWNER%
+  &2Manager: &b%MANAGERS%
+  &2Membri: &b%MEMBERS%
+# Text to display when viewing a players level with /ts PlayerLevel
+view-player-level: '&b%PLAYER% ha un livello di %LEVEL%.'
+# Text to display after setting a players level
+set-player-level: '&7Hai impostato il livello di %PLAYER% a %LEVEL%!'
+# Text to display when a message uses an Item Type and the Type varies
+various-item-type: Vari
+toggled-status: 'Stato cambiato a: &c%STATUS%'
+# Text to display when a player is too far from a sign
+no-sign-found: '&cNon ci sono cartelli vicini!'
+# Text to display when a shop sign with no shop data is interacted with.
+no-shop-found: '&cQuel negozio non sembra esistere!'
+# Text to display when an admin toggles or views their Admin abilities.
+# "%STATE%" will be replaced by the state that the player is in after the command.
+admin-toggled: '&7La tua modalità admin è attualmente &b%STATE%&7.'
+# Text to display when a player is too far from a sign
+failed-trade: '&cLo scambio è fallito per ragioni sconosciute, per favore contatta un admin!'
+shop-limit-reached: |-
+  &cHai raggiunto/superato il tuo limite di negozi (%AMOUNT1%)!
+          Negozi posseduti attualmente: %AMOUNT2%

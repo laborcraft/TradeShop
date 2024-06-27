@@ -63,7 +63,7 @@ public class BasicTextSubCommand extends SubCommand {
                 .append(" ")
                 .append(getVersion())
                 .append(" by ").append(pdf.getAuthors().get(0)).append(" & ").append(pdf.getAuthors().get(1))
-                .append("\n\n&b/tradeshop &f &f Display help message\n");
+                .append("\n\n&b/negozi &f &f Mostra il messaggio di aiuto\n");
 
         for (CommandType c : CommandType.values()) {
             if (c.checkPerm(getSender()) == PermStatus.GOOD) {

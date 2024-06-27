@@ -40,13 +40,13 @@ language-options:
 
   # Status Text, What will be shown in the bottom line of shop sign for each status
   # Open
-  shop-open-status: '&a<Open>'
+  shop-open-status: '&a<Aperto>'
   # Closed
-  shop-closed-status: '&c<Closed>'
+  shop-closed-status: '&c<Chiuso>'
   # Incomplete
-  shop-incomplete-status: '&c<Incomplete>'
+  shop-incomplete-status: '&c<Incompleto>'
   # Out of Stock
-  shop-outofstock-status: '&c<Out Of Stock>'
+  shop-outofstock-status: '&c<Esaurito>'
 
 
 # |    Global Options    |

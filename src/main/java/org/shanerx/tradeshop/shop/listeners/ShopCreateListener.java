@@ -34,6 +34,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.shanerx.tradeshop.TradeShop;
+import org.shanerx.tradeshop.integration.WorldguardIntegration;
 import org.shanerx.tradeshop.item.ShopItemSide;
 import org.shanerx.tradeshop.shop.Shop;
 import org.shanerx.tradeshop.shop.ShopType;

@@ -63,8 +63,8 @@ public class CommandTabCaller implements TabCompleter {
             switch (commandType) {
                 case HELP:
                     return tabCompleter.help();
-                case ADD_PRODUCT:
-                case ADD_COST:
+                /*case ADD_PRODUCT:
+                case ADD_COST:*/
                 case SET_COST:
                 case SET_PRODUCT:
                     return tabCompleter.addSet();

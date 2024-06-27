@@ -87,7 +87,7 @@ public class Updater {
     }
 
     public RelationalStatus checkCurrentVersion() {
-        try {
+        /*try {
 
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(url.openStream()));
@@ -129,8 +129,8 @@ public class Updater {
             log.log(Level.WARNING, "[Updater] Please check for new updates from: ");
             log.log(Level.WARNING, "[Updater] " + updateURL);
             log.log(Level.WARNING, "[Updater] +----------------------------------------------------+");
-        }
-        return RelationalStatus.UNKNOWN;
+        }*/
+        return RelationalStatus.UP_TO_DATE;
     }
 
     public RelationalStatus compareVersions(final String major, final String minor, final String patch) {

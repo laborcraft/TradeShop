@@ -43,47 +43,47 @@ import java.util.List;
 public enum CommandType {
 
     // Shop other management commands
-    OPEN(Lists.newArrayList("open"), Permissions.NONE, 1, 1, true, "Open shop", "/tradeshop $cmd$"),
-    CLOSE(Lists.newArrayList("close"), Permissions.NONE, 1, 1, true, "Close shop", "/tradeshop $cmd$"),
-    SWITCH(Lists.newArrayList("switch"), Permissions.EDIT, 1, 1, true, "Switch shop type", "/tradeshop $cmd$"),
-    EDIT(Lists.newArrayList("edit", "e"), Permissions.EDIT, 1, 1, true, "Opens Edit GUI for shop", "/tradeshop $cmd$"),
-    CREATE_TRADE(Lists.newArrayList("createtrade", "create", "cr"), Permissions.CREATE, 1, 1, true, "Create regular shop", "/tradeshop $cmd$"),
-    CREATE_BITRADE(Lists.newArrayList("createbitrade", "createbi", "crbi"), Permissions.CREATEBI, 1, 1, true, "Create BiTrade shop", "/tradeshop $cmd$"),
-    CREATE_ITRADE(Lists.newArrayList("createitrade", "createi", "cri"), Permissions.CREATEI, 1, 1, true, "Create iTrade shop", "/tradeshop $cmd$"),
+    OPEN(Lists.newArrayList("apri"), Permissions.NONE, 1, 1, true, "Apri negozio", "/negozi $cmd$"),
+    CLOSE(Lists.newArrayList("chiudi"), Permissions.NONE, 1, 1, true, "Chiudi negozio", "/negozi $cmd$"),
+    SWITCH(Lists.newArrayList("cambia"), Permissions.EDIT, 1, 1, true, "Cambia tipo di shop", "/negozi $cmd$"),
+    EDIT(Lists.newArrayList("modifica", "m"), Permissions.EDIT, 1, 1, true, "Apre la GUI di modifica del negozio", "/negozi $cmd$"),
+    CREATE_TRADE(Lists.newArrayList("crea"), Permissions.CREATE, 1, 1, true, "Crea negozio", "/negozi $cmd$"),
+    CREATE_BITRADE(Lists.newArrayList("crea-bidirezionale"), Permissions.CREATEBI, 1, 1, true, "Crea negozio bidirezionale", "/negozi $cmd$"),
+    CREATE_ITRADE(Lists.newArrayList("crea-server"), Permissions.CREATEI, 1, 1, true, "Create negozio del server", "/negozi $cmd$"),
 
     // Shop user management commands
-    REMOVE_USER(Lists.newArrayList("removeUser", "removeManager", "removeMember"), Permissions.NONE, 2, 3, true, "Remove user from shop", "/tradeshop $cmd$ <Name> [all shops]"),
-    ADD_MANAGER(Lists.newArrayList("addManager", "addMan"), Permissions.NONE, 2, 3, true, "Add manager to shop", "/tradeshop $cmd$ <name> [all shops]"),
-    ADD_MEMBER(Lists.newArrayList("addMember", "addMem"), Permissions.NONE, 2, 3, true, "Add member to shop", "/tradeshop $cmd$ <name> [all shops]"),
-    SET_MANAGER(Lists.newArrayList("setManager", "setMan"), Permissions.NONE, 2, 3, true, "Sets a player to Manager on a shop", "/tradeshop $cmd$ <name> [all shops]"),
-    SET_MEMBER(Lists.newArrayList("setMember", "setMem"), Permissions.NONE, 2, 3, true, "Sets a player to Member on a shop", "/tradeshop $cmd$ <name> [all shops]"),
+    REMOVE_USER(Lists.newArrayList("rimuoviUtente"), Permissions.NONE, 2, 3, true, "Rimuove un utente dal negozio", "/negozi $cmd$ <Name> [all shops]"),
+    ADD_MANAGER(Lists.newArrayList("aggiungiManager"), Permissions.NONE, 2, 3, true, "Aggiunge un manager ad un negozio", "/negozi $cmd$ <name> [all shops]"),
+    ADD_MEMBER(Lists.newArrayList("aggiungiMembro"), Permissions.NONE, 2, 3, true, "Aggiunge un membro ad un negozio", "/negozi $cmd$ <name> [all shops]"),
+    SET_MANAGER(Lists.newArrayList("impostaManager"), Permissions.NONE, 2, 3, true, "Imposta un giocatore come manager di un negozio", "/negozi $cmd$ <name> [all shops]"),
+    SET_MEMBER(Lists.newArrayList("setMembro"), Permissions.NONE, 2, 3, true, "Imposta un giocatore come membro di un negozio", "/negozi $cmd$ <name> [all shops]"),
 
     // Shop item management commands
-    ADD_PRODUCT(Lists.newArrayList("addProduct"), Permissions.NONE, 1, 3, true, "Add product to shop", "/tradeshop $cmd$ [Amount] [Material]"),
-    ADD_COST(Lists.newArrayList("addCost"), Permissions.NONE, 1, 3, true, "Add cost to shop", "/tradeshop $cmd$ [Amount] [Material]"),
-    SET_PRODUCT(Lists.newArrayList("setProduct"), Permissions.NONE, 1, 3, true, "Set product of shop ", "/tradeshop $cmd$ [Amount] [Material]"),
-    SET_COST(Lists.newArrayList("setCost"), Permissions.NONE, 1, 3, true, "Set cost of shop", "/tradeshop $cmd$ [Amount] [Material]"),
-    REMOVE_PRODUCT(Lists.newArrayList("removeProduct", "delProduct"), Permissions.NONE, 1, 2, true, "Removes a product from the shop", "/tradeshop $cmd$ <List #>"),
-    REMOVE_COST(Lists.newArrayList("removeCost", "delCost"), Permissions.NONE, 1, 2, true, "Removes a product from the shop", "/tradeshop $cmd$ <List #>"),
-    LIST_PRODUCT(Lists.newArrayList("listProduct"), Permissions.NONE, 1, 1, true, "Lists the products in the shop", "/tradeshop $cmd$"),
-    LIST_COST(Lists.newArrayList("listCost"), Permissions.NONE, 1, 1, true, "Lists the costs in a shop", "/tradeshop $cmd$"),
+    //ADD_PRODUCT(Lists.newArrayList("aggiungiProdotto"), Permissions.NONE, 1, 3, true, "Aggiungi un prodotto al negozio", "/negozi $cmd$ [Amount] [Material]"),
+    //ADD_COST(Lists.newArrayList("aggiungiPagamento"), Permissions.NONE, 1, 3, true, "Aggiungi un pagamento al negozio", "/negozi $cmd$ [Amount] [Material]"),
+    SET_PRODUCT(Lists.newArrayList("impostaProdotto"), Permissions.NONE, 1, 3, true, "Imposta il prodotto del negozio", "/negozi $cmd$ [Amount] [Material]"),
+    SET_COST(Lists.newArrayList("impostaPagamento"), Permissions.NONE, 1, 3, true, "Imposta il pagamendo del negozio", "/negozi $cmd$ [Amount] [Material]"),
+    REMOVE_PRODUCT(Lists.newArrayList("rimuoviProdotto"), Permissions.NONE, 1, 2, true, "Rimuovi un prodotto dal negozio", "/negozi $cmd$ <List #>"),
+    REMOVE_COST(Lists.newArrayList("removeCost", "delCost"), Permissions.NONE, 1, 2, true, "Rimuovi un pagamento dal negozio", "/negozi $cmd$ <List #>"),
+    //LIST_PRODUCT(Lists.newArrayList("listProduct"), Permissions.NONE, 1, 1, true, "Lista i prodotti del negozio", "/negozi $cmd$"),
+    //LIST_COST(Lists.newArrayList("listCost"), Permissions.NONE, 1, 1, true, "Lisa i pagamenti del negozio", "/negozi $cmd$"),
 
     // Shop info/Player commands
-    WHO(Lists.newArrayList("who"), Permissions.INFO, 1, 1, true, "Shop members of shop", "/tradeshop $cmd$"),
-    WHAT(Lists.newArrayList("what", "peek", "shop", "view"), Permissions.INFO, 1, 1, true, "Peek at shop inventory", "/tradeshop $cmd$"),
-    MULTI(Lists.newArrayList("multi", "multiply", "many"), Permissions.NONE, 1, 2, true, "Changes trade multiplier for this login", "/tradeshop $cmd$ <Amount>"),
-    STATUS(Lists.newArrayList("status", "stats", "s"), Permissions.INFO, 1, 2, true, "Displays the status of all shops the player has a relation to", "/tradeshop $cmd$ [Name]"),
-    TOGGLE_STATUS(Lists.newArrayList("togglestatus", "togglemotd", "tstatus"), Permissions.INFO, 1, 1, true, "Toggles the join message containing the list of shops one is involved with", "/tradeshop $cmd$"),
-    FIND(Lists.newArrayList("find", "where", "near"), Permissions.FIND, 2, 50, true, "Finds nearby shops. <Search Parameters> can include \n'cost=item1,item2,moreItems;'\n'product=item1,item2,moreItems;'\n'distance=number'\n    '|' can be used in place of commas in the list if you would like on of multiple items.\n    The lists are read from left to right so 'minecraft:dirt|minecraft:stone,minecraft:dirt' would be dirt of (stone and dit). A shop with just stone would not be found with this.", "/tradeshop $cmd$ <Search Paramaters>"),
+    WHO(Lists.newArrayList("membri"), Permissions.INFO, 1, 1, true, "Mostra i membri del negozio", "/negozi $cmd$"),
+    WHAT(Lists.newArrayList("inventario"), Permissions.INFO, 1, 1, true, "Mostra lo stato dell'inventario del negozio", "/negozi $cmd$"),
+    MULTI(Lists.newArrayList("moltiplicatore"), Permissions.NONE, 1, 2, true, "Cambia il moltiplicatore di scambi per questa sessione", "/negozi $cmd$ <Amount>"),
+    STATUS(Lists.newArrayList("stato"), Permissions.INFO, 1, 2, true, "Mostra lo stato di tutti i negozi in cui il giocatore è coinvolto", "/negozi $cmd$ [Name]"),
+    TOGGLE_STATUS(Lists.newArrayList("cambiastatus"), Permissions.INFO, 1, 1, true, "Cambia il messaggio di login contenente la lista dei negozi in cui il giocatore è coinvolto", "/negozi $cmd$"),
+    FIND(Lists.newArrayList("trova"), Permissions.FIND, 2, 50, true, "Trova negozi vicini. <Parametri> può includere \n'cost=item1,item2,item3;'\n'product=item1,item2,item3;'\n'distance=numero'\n    '|' può essere usato al posto delle virgole nella lista se preferisci.\n    Le liste si leggono da destra a sinistra, quindi 'minecraft:dirt|minecraft:stone,minecraft:dirt' sarebbe terra di (pietra e terra). Un negozio con solo pietra non verrebbe trovato così.", "/negozi $cmd$ <Search Paramaters>"),
 
     // Other commands
-    HELP(Lists.newArrayList("help", "?"), Permissions.HELP, 1, 2, false, "Display help message", "/tradeshop $cmd$ [command]"),
-    SETUP(Lists.newArrayList("setup", "start", "create", "make"), Permissions.HELP, 1, 1, false, "Display shop setup tutorial", "/tradeshop $cmd$"),
-    BUGS(Lists.newArrayList("bugs", "bug"), Permissions.NONE, 1, 1, false, "Report bugs to the developers", "/tradeshop $cmd$"),
-    TOGGLE_ADMIN(Lists.newArrayList("toggleadmin", "tadmin", "ta"), Permissions.ADMIN, 1, 1, true, "Toggles Admin mode for players with the admin permission", "/tradeshop $cmd$"),
-    ADMIN(Lists.newArrayList("admin"), Permissions.ADMIN, 1, 2, true, "Shows players their current admin mode or changes with optional variable", "/tradeshop $cmd$ [True/False]"),
-    METRICS(Lists.newArrayList("metrics", "metric", "m"), Permissions.ADMIN, 1, 1, false, "Displays the plugins counted metrics.", "/tradeshop $cmd$"),
-    RELOAD(Lists.newArrayList("reload"), Permissions.MANAGE_PLUGIN, 1, 1, false, "Reload configuration files", "/tradeshop $cmd$");
+    HELP(Lists.newArrayList("aiuto", "?"), Permissions.HELP, 1, 2, false, "Mostra il messaggio di aiuto", "/negozi $cmd$ [command]"),
+    SETUP(Lists.newArrayList("tutorial"), Permissions.HELP, 1, 1, false, "Mostra il tutorial", "/negozi $cmd$"),
+    //BUGS(Lists.newArrayList("bug"), Permissions.NONE, 1, 1, false, "Riporta i bug al developer", "/negozi $cmd$"),
+    //TOGGLE_ADMIN(Lists.newArrayList("admin"), Permissions.ADMIN, 1, 1, true, "Attiva/disattiva la modalità amministratore", "/negozi $cmd$"),
+    ADMIN(Lists.newArrayList("admin"), Permissions.ADMIN, 1, 2, true, "Mostra lo stato della modalità amministratore, o la cambia con la variabile opzionale", "/negozi $cmd$ [True/False]"),
+    METRICS(Lists.newArrayList("statistiche"), Permissions.ADMIN, 1, 1, false, "Mostra le statistiche.", "/negozi $cmd$"),
+    RELOAD(Lists.newArrayList("ricarica"), Permissions.MANAGE_PLUGIN, 1, 1, false, "Ricarica la configurazione", "/negozi $cmd$");
 
 
     /**

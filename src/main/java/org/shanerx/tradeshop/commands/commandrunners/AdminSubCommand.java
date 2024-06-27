@@ -70,7 +70,7 @@ public class AdminSubCommand extends SubCommand {
             return;
         }
 
-        sendMessage(Setting.MESSAGE_PREFIX.getString().trim() + "&6The configuration files have been reloaded!");
+        sendMessage(Setting.MESSAGE_PREFIX.getString().trim() + "&6Configurazione ricaricata!");
         Bukkit.getPluginManager().callEvent(new TradeShopReloadEvent(plugin, getSender()));
     }
 

@@ -63,21 +63,21 @@ public abstract class SubCommand extends Utils {
             case HELP:
                 new BasicTextSubCommand(plugin, sender, args).help();
                 break;
-            case BUGS:
+            /*case BUGS:
                 new BasicTextSubCommand(plugin, sender, args).bugs();
-                break;
+                break;*/
             case SETUP:
                 new BasicTextSubCommand(plugin, sender, args).setup();
                 break;
             case RELOAD:
                 new AdminSubCommand(plugin, sender, args).reload();
                 break;
-            case ADD_PRODUCT:
+            /*case ADD_PRODUCT:
                 new ShopItemSubCommand(plugin, sender, args, ShopItemSide.PRODUCT).addSide();
                 break;
             case ADD_COST:
                 new ShopItemSubCommand(plugin, sender, args, ShopItemSide.COST).addSide();
-                break;
+                break;*/
             case OPEN:
                 new ShopSubCommand(plugin, sender, args).open();
                 break;
@@ -117,12 +117,12 @@ public abstract class SubCommand extends Utils {
             case SET_COST:
                 new ShopItemSubCommand(plugin, sender, args, ShopItemSide.COST).setSide();
                 break;
-            case LIST_PRODUCT:
+            /*case LIST_PRODUCT:
                 new ShopItemSubCommand(plugin, sender, args, ShopItemSide.PRODUCT).listSide();
                 break;
             case LIST_COST:
                 new ShopItemSubCommand(plugin, sender, args, ShopItemSide.COST).listSide();
-                break;
+                break;*/
             case REMOVE_PRODUCT:
                 new ShopItemSubCommand(plugin, sender, args, ShopItemSide.PRODUCT).removeSide();
                 break;
@@ -150,9 +150,9 @@ public abstract class SubCommand extends Utils {
             case CREATE_ITRADE:
                 new CreateSubCommand(plugin, sender, args).createShop(ShopType.ITRADE);
                 break;
-            case TOGGLE_ADMIN:
+            /*case TOGGLE_ADMIN:
                 new AdminSubCommand(plugin, sender, args).toggleAdmin();
-                break;
+                break;*/
             case ADMIN:
                 new AdminSubCommand(plugin, sender, args).admin();
                 break;

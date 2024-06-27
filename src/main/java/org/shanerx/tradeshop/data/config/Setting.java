@@ -63,16 +63,16 @@ public enum Setting {
     TRANSACTION_LOG_FORMAT(SettingSection.TRANSACTION_LOGGING_OPTIONS, "transaction-log-format", "%Date_@_%Time_@_%ShopType_@_%Owner_@_%TradingPlayer_@_%World_@_%X_@_%Y_@_%Z_@_%CostList_@_%ProductList"),
 
     // Language Options
-    MESSAGE_PREFIX(SettingSection.LANGUAGE_OPTIONS, "message-prefix", "&a[&eTradeShop&a]"),
+    MESSAGE_PREFIX(SettingSection.LANGUAGE_OPTIONS, "message-prefix", "&7[&bNegozi&7]"),
 
     SHOP_GOOD_COLOUR(SettingSection.LANGUAGE_OPTIONS, "shop-good-colour", "&2"),
     SHOP_INCOMPLETE_COLOUR(SettingSection.LANGUAGE_OPTIONS, "shop-incomplete-colour", "&7"),
     SHOP_BAD_COLOUR(SettingSection.LANGUAGE_OPTIONS, "shop-bad-colour", "&4"),
 
-    SHOP_OPEN_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-open-status", "&a<Open>"),
-    SHOP_CLOSED_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-closed-status", "&c<Closed>"),
-    SHOP_INCOMPLETE_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-incomplete-status", "&c<Incomplete>"),
-    SHOP_OUTOFSTOCK_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-outofstock-status", "&c<Out Of Stock>"),
+    SHOP_OPEN_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-open-status", "&a<Aperto>"),
+    SHOP_CLOSED_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-closed-status", "&c<Chiuso>"),
+    SHOP_INCOMPLETE_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-incomplete-status", "&c<Incompleto>"),
+    SHOP_OUTOFSTOCK_STATUS(SettingSection.LANGUAGE_OPTIONS, "shop-outofstock-status", "&c<Esaurito>"),
 
     // Global Options
     CHEST_DIRECTIONS(SettingSection.GLOBAL_OPTIONS, "chest-directions", new String[]{"BACK", "DOWN", "LEFT", "RIGHT", "UP", "FRONT"}),
@@ -84,7 +84,7 @@ public enum Setting {
 
 
     // ^ Multi Trade
-    ALLOW_MULTI_TRADE(SettingSection.GLOBAL_MULTI_TRADE, "enable", true),
+    ALLOW_MULTI_TRADE(SettingSection.GLOBAL_MULTI_TRADE, "enable", false),
     MULTI_TRADE_DEFAULT(SettingSection.GLOBAL_MULTI_TRADE, "default-multi", 2),
     MULTI_TRADE_MAX(SettingSection.GLOBAL_MULTI_TRADE, "max-multi", 6),
 
@@ -100,8 +100,8 @@ public enum Setting {
     MAX_SHOPS_PER_PLAYER(SettingSection.SHOP_OPTIONS, "max-shops-per-player", Collections.singletonMap("default", -1)),
     MAX_ITEMS_PER_TRADE_SIDE(SettingSection.SHOP_OPTIONS, "max-items-per-trade-side", 6),
     ALLOW_USER_PURCHASING(SettingSection.SHOP_OPTIONS, "allow-user-purchasing", false),
-    MULTIPLE_ITEMS_ON_SIGN(SettingSection.SHOP_OPTIONS, "multiple-items-on-sign", "Use '/ts what'"),
-    NO_COST_TEXT(SettingSection.SHOP_OPTIONS, "no-cost-text", "nothing"),
+    MULTIPLE_ITEMS_ON_SIGN(SettingSection.SHOP_OPTIONS, "multiple-items-on-sign", "Usa '/negozi inventario'"),
+    NO_COST_TEXT(SettingSection.SHOP_OPTIONS, "no-cost-text", "niente"),
     NO_COST_AMOUNT(SettingSection.SHOP_OPTIONS, "no-cost-amount", "1"),
 
     SHOP_PER_ITEM_SETTINGS(SettingSection.SHOP_ITEM_OPTIONS, "shop-per-item-settings", ShopItemStackSettingKeys.getDefaultConfigMap()),
@@ -109,18 +109,18 @@ public enum Setting {
     SHOP_SIGN_DEFAULT_COLOURS(SettingSection.SHOP_SIGN_OPTIONS, "sign-default-colours", ShopSign.getDefaultColourMap()),
 
     // Trade Shop Options
-    TRADESHOP_HEADER(SettingSection.TRADE_SHOP_OPTIONS, "header", "Trade"),
+    TRADESHOP_HEADER(SettingSection.TRADE_SHOP_OPTIONS, "header", "Negozio"),
     TRADESHOP_EXPLODE(SettingSection.TRADE_SHOP_OPTIONS, "allow-explode", false),
     TRADE_PER_SHOP_SETTINGS(SettingSection.TRADE_SHOP_OPTIONS, "trade-per-shop-settings", ShopSettingKeys.getSettingConfigMap(ShopType.TRADE)),
 
     // ITrade Shop Options
-    ITRADESHOP_OWNER(SettingSection.ITRADE_SHOP_OPTIONS, "owner", "Server Shop"),
-    ITRADESHOP_HEADER(SettingSection.ITRADE_SHOP_OPTIONS, "header", "iTrade"),
+    ITRADESHOP_OWNER(SettingSection.ITRADE_SHOP_OPTIONS, "owner", "Neg. del Server"),
+    ITRADESHOP_HEADER(SettingSection.ITRADE_SHOP_OPTIONS, "header", "NegozioServer"),
     ITRADESHOP_EXPLODE(SettingSection.ITRADE_SHOP_OPTIONS, "allow-explode", false),
     ITRADE_PER_SHOP_SETTINGS(SettingSection.ITRADE_SHOP_OPTIONS, "itrade-per-shop-settings", ShopSettingKeys.getSettingConfigMap(ShopType.ITRADE)),
 
     // BiTrade Shop Options
-    BITRADESHOP_HEADER(SettingSection.BITRADE_SHOP_OPTIONS, "header", "BiTrade"),
+    BITRADESHOP_HEADER(SettingSection.BITRADE_SHOP_OPTIONS, "header", "NegozioBidir"),
     BITRADESHOP_EXPLODE(SettingSection.BITRADE_SHOP_OPTIONS, "allow-explode", false),
     BITRADE_PER_SHOP_SETTINGS(SettingSection.BITRADE_SHOP_OPTIONS, "bitrade-per-shop-settings", ShopSettingKeys.getSettingConfigMap(ShopType.BITRADE)),
 

@@ -25,11 +25,13 @@
 
 package org.shanerx.tradeshop.framework.events;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 import org.shanerx.tradeshop.TradeShop;
+import org.shanerx.tradeshop.integration.WorldguardIntegration;
 import org.shanerx.tradeshop.shop.Shop;
 
 /**
@@ -51,6 +53,14 @@ public class PlayerShopCreateEvent extends PlayerEvent implements Cancellable {
         super(p);
         this.shop = shop;
         TradeShop.getPlugin().getVarManager().adjustShops(1);
+        //cancel if worldguard is on deny
+        WorldguardIntegration worldguardIntegration = TradeShop.getPlugin().worldguardIntegration;
+        if(worldguardIntegration != null) {
+            if (!worldguardIntegration.evaluate(p, shop.getShopLocation())) {
+                cancelled = true;
+                p.sendMessage(ChatColor.RED + "Non puoi creare uno shop qui!");
+            }
+        }
     }
 
     public static HandlerList getHandlerList() {

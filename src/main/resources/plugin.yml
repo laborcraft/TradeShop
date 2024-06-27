@@ -3,12 +3,13 @@ version: ${project.version}
 main: org.shanerx.tradeshop.TradeShop
 api-version: 1.14
 load: POSTWORLD
+depend: [WorldGuard]
 
 authors: [Lori00, KillerOfPie]
 description: ${project.description}
 website: ${project.url}
 
 commands:
-  tradeshop:
-    description: Core command for TradeShop
-    aliases: [ts]
+  negozi:
+    description: Comando di gestione dei negozi
+    aliases: [n]
