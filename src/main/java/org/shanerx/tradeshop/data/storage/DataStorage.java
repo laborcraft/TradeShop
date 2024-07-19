@@ -199,6 +199,16 @@ public class DataStorage extends Utils {
         return getShopConfiguration(chunk).size();
     }
 
+    public List<Shop> getShopsInChunk(ChunkSnapshot chunk) {
+        List<Shop> matchingShops = new ArrayList<>();
+        ShopChunk shopChunk = new ShopChunk(chunk);
+        if (chunkExists(shopChunk)) {
+            ShopConfiguration config = getShopConfiguration(shopChunk);
+            config.list().forEach((shopLoc) -> matchingShops.add(config.load(shopLoc)));
+        }
+        return matchingShops;
+    }
+
     public List<Shop> getMatchingShopsInChunk(ChunkSnapshot chunk, boolean inStock, List<ItemStack> desiredCosts, List<ItemStack> desiredProducts) {
         List<Shop> matchingShops = new ArrayList<>();
         ShopChunk shopChunk = new ShopChunk(chunk);

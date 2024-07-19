@@ -26,11 +26,13 @@
 package org.shanerx.tradeshop;
 
 import com.google.common.collect.Lists;
-import com.sk89q.worldguard.WorldGuard;
-import com.sk89q.worldguard.protection.flags.registry.FlagRegistry;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
+import org.bukkit.event.server.PluginEnableEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.shanerx.tradeshop.commands.CommandCaller;
@@ -39,6 +41,7 @@ import org.shanerx.tradeshop.data.config.ConfigManager;
 import org.shanerx.tradeshop.data.config.Language;
 import org.shanerx.tradeshop.data.config.Setting;
 import org.shanerx.tradeshop.data.storage.DataStorage;
+import org.shanerx.tradeshop.integration.AdvancedRegionMarketIntegration;
 import org.shanerx.tradeshop.integration.WorldguardIntegration;
 import org.shanerx.tradeshop.player.JoinEventListener;
 import org.shanerx.tradeshop.player.Permissions;
@@ -61,10 +64,11 @@ import org.shanerx.tradeshop.utils.versionmanagement.Version;
 import java.util.*;
 import java.util.logging.Level;
 
-public class TradeShop extends JavaPlugin {
+public class TradeShop extends JavaPlugin implements Listener {
 
     private VarManager varManager;
     public WorldguardIntegration worldguardIntegration = null;
+    public AdvancedRegionMarketIntegration advancedRegionMarketIntegration = null;
 
     public static TradeShop getPlugin() {
         TradeShop plugin = null;
@@ -116,12 +120,32 @@ public class TradeShop extends JavaPlugin {
         aliasCheck("n");
 
         if(worldguardIntegration != null) worldguardIntegration.init();
+
+        //if ARM was already loaded, enable integration now
+        if(Bukkit.getPluginManager().isPluginEnabled("AdvancedRegionMarket")){
+            advancedRegionMarketIntegration = new AdvancedRegionMarketIntegration(getLogger());
+            Bukkit.getPluginManager().registerEvents(advancedRegionMarketIntegration, this);
+        }
+        Bukkit.getPluginManager().registerEvents(this, this);
+    }
+
+    @EventHandler
+    public void onPluginLoad(PluginEnableEvent e){
+        //if ARM was loaded after TradeShop, enable now integration
+        if(advancedRegionMarketIntegration == null && e.getPlugin().getName().equalsIgnoreCase("AdvancedRegionMarket")){
+            advancedRegionMarketIntegration = new AdvancedRegionMarketIntegration(getLogger());
+            Bukkit.getPluginManager().registerEvents(advancedRegionMarketIntegration, this);
+        }
     }
 
     @Override
     public void onDisable() {
         if (getListManager() != null)
             getListManager().clearManager();
+        HandlerList.unregisterAll((Listener) this);
+        if(advancedRegionMarketIntegration != null){
+            HandlerList.unregisterAll(advancedRegionMarketIntegration);
+        }
     }
 
     //<editor-fold desc="Helpers">

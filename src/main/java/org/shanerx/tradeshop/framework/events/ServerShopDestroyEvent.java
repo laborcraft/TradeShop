@@ -3,6 +3,7 @@
  *                         Copyright (c) 2016-2023
  *                SparklingComet @ http://shanerx.org
  *               KillerOfPie @ http://killerofpie.github.io
+ *                   Tig3r98 @ https://www.github.com/Tig3r98
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -25,30 +26,25 @@
 
 package org.shanerx.tradeshop.framework.events;
 
-import org.bukkit.entity.Player;
-import org.bukkit.event.Cancellable;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.player.PlayerEvent;
 import org.shanerx.tradeshop.TradeShop;
 import org.shanerx.tradeshop.shop.Shop;
 
 /**
- * This class represents the event being fired upon shop destruction by a player. It implements {@link org.bukkit.event.Cancellable},
- * which makes it possible to cancel the event.
+ * This class represents the event being fired upon shop destruction by the server.
+ * It is not cancellable, but it gets called before the shop gets actually deleted.
  */
-public class PlayerShopDestroyEvent extends PlayerEvent implements Cancellable {
+public class ServerShopDestroyEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
-    private boolean cancelled, destroyBlock;
     private final Shop shop;
 
     /**
      * Constructor for the object.
-     * @param p The {@link org.bukkit.entity.Player} object representing the player who is destroying the shop.
-     * @param shop The {@link Shop} object which represents the shop the player is destroying.
+     * @param shop The {@link Shop} object which represents the shop the server is destroying.
      */
-    public PlayerShopDestroyEvent(Player p, Shop shop) {
-        super(p);
+    public ServerShopDestroyEvent(Shop shop) {
         this.shop = shop;
         TradeShop.getPlugin().getVarManager().adjustShops(-1);
     }
@@ -57,45 +53,8 @@ public class PlayerShopDestroyEvent extends PlayerEvent implements Cancellable {
         return handlers;
     }
 
-    @Override
     public HandlerList getHandlers() {
         return handlers;
-    }
-
-    /**
-     * Returns whether or not the event has been cancelled.
-     * @return true if the event is being cancelled.
-     */
-    @Override
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
-    /**
-     * Choose whether or not to cancel the event.
-     * @param cancelled true if the event should be cancelled.
-     */
-    @Override
-    public void setCancelled(boolean cancelled) {
-        this.cancelled = cancelled;
-    }
-
-    /**
-     * Returns whether or not the BlockBreakEvent should been cancelled.
-     *
-     * @return true if the BlockBreakEvent is being cancelled.
-     */
-    public boolean destroyBlock() {
-        return destroyBlock;
-    }
-
-    /**
-     * Choose whether or not to cancel the BlockBreakEvent.
-     *
-     * @param destroyBlock true if the BlockBreakEvent should be cancelled.
-     */
-    public void setDestroyBlock(boolean destroyBlock) {
-        this.destroyBlock = destroyBlock;
     }
 
     /**
