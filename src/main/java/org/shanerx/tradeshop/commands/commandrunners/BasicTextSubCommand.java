@@ -67,7 +67,7 @@ public class BasicTextSubCommand extends SubCommand {
 
         for (CommandType c : CommandType.values()) {
             if (c.checkPerm(getSender()) == PermStatus.GOOD) {
-                sb.append(plugin.getMessageManager().colour(String.format("&b/ts %s  &f %s\n", c.getFirstName(), c.getDescription())));
+                sb.append(plugin.getMessageManager().colour(String.format("&b/n %s  &f %s\n", c.getFirstName(), c.getDescription())));
             }
         }
 
@@ -83,10 +83,10 @@ public class BasicTextSubCommand extends SubCommand {
     public void usage(String subcmd) {
         CommandType cmd = CommandType.getType(subcmd);
         if (cmd == null) {
-            sendMessage(plugin.getMessageManager().colour(String.format("&4Cannot find usages for &c%s&r", subcmd)));
+            sendMessage(plugin.getMessageManager().colour(String.format("&4Impossibile trovare usi per &c%s&r", subcmd)));
             return;
         }
-        sendMessage(plugin.getMessageManager().colour(String.format("&6Showing help for &c%s&r\n&bUsage:&e %s \n&bAliases: %s\n&bDescription:&e %s", subcmd, cmd.getUsage(), cmd.getAliases(), cmd.getDescription())));
+        sendMessage(plugin.getMessageManager().colour(String.format("&6Aiuto per &c%s&r\n&bUso:&e %s \n&bAlias: %s\n&bDescrizione:&e %s", subcmd, cmd.getUsage(), cmd.getAliases(), cmd.getDescription())));
     }
 
     /**

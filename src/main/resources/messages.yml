@@ -2,7 +2,7 @@
 #    TradeShop Messages    #
 ############################
 # Version of the current config file.
-# Do not change!
+# Do not change!s
 message-version: 1.2
 # This currently does not change anything in the message files, but is used in metrics so that we can see what languages we should try to provide built in support for in the future.
 # Please use codes as listed at: https://www.andiamo.co.uk/resources/iso-language-codes/
@@ -25,8 +25,8 @@ no-shulker-cost: '&cYou cannot add a Shulker Box as a cost when the shop uses it
 insufficient-items: '&cYou do not have &e%AMOUNT% %ITEM%&c!'
 # Text to display when the shop does not have enough items:
 shop-insufficient-items: '&cThis shop does not have enough &e%AMOUNT% %ITEM%&c to trade!'
-# Text to display when invalid arguments are submitted through the "/tradeshop" command:
-invalid-arguments: '&eTry &6/tradeshop help &eto display help!'
+# Text to display when invalid arguments are submitted through the "/negozi" command:
+invalid-arguments: '&eTry &6/negozi help &eto display help!'
 item-added: '&aItem successfully added to shop.'
 item-not-removed: '&cItem could not be removed from shop.'
 item-removed: '&aItem successfully removed to shop.'
@@ -62,7 +62,7 @@ player-only-command: '&eThis command is only available to players.'
 plugin-behind: '&cThe server is running an old version of TradeShop, please update the plugin.'
 # Text to display when a player tries to buy form a shop in which they are a user
 self-owned: '&cYou cannot buy from a shop in which you are a user.'
-# Text to display on "/tradeshop setup":
+# Text to display on "/negozi setup":
 setup-help: "\n&2Setting up a TradeShop is easy! Just make sure to follow these steps:\n \nStep\
   \ 1: &ePlace down a chest.\n&2Step 2: &ePlace a sign on top of or around the chest.\n\
   &2Step 3: &eWrite the following on the sign\n&6 [%HEADER%]\n&6&o-- Leave Blank --\n\
@@ -76,7 +76,7 @@ shop-full: '&cThis TradeShop is full, please contact the owner to get it emptied
 shop-item-list: |-
   &aThe shops %TYPE%:
   %LIST%
-# Text to display when a player uses '/ts toggle'
+# Text to display when a player uses '/n toggle'
 # Available variables are: %TYPE% %NEWTYPE%
 shop-type-switched: '&aShop type has been switched to %NEWTYPE%.'
 # Text to display when a player successfully creates a TradeShop:
@@ -94,7 +94,7 @@ who-message: |-
   &2Owner: &e%OWNER%
   &2Managers: &e%MANAGERS%
   &2Members: &e%MEMBERS%
-# Text to display when viewing a players level with /ts PlayerLevel
+# Text to display when viewing a players level with /n PlayerLevel
 view-player-level: '&e%PLAYER% has a level of %LEVEL%.'
 # Text to display after setting a players level
 set-player-level: '&aYou have set the level of %PLAYER% to %LEVEL%!'

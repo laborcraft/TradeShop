@@ -35,7 +35,7 @@ body:
     attributes:
       label: TradeShop version and Minecraft version (CraftBukkit/Spigot/Paper/...)
       description: |
-        Run `/version` and `/ts help` on your server and **paste** the full, unmodified output here.
+        Run `/version` and `/n help` on your server and **paste** the full, unmodified output here.
         "latest" is *not* a version; we require the actual output outputs so we can adequately track down the issue.
         Additionally, do NOT provide a screenshot, you MUST paste the entire output.
         Lastly, if you use a pre-release (DEV build), add the date and time of the release as well, as often many pre-releases share the same version tag.
@@ -52,12 +52,12 @@ body:
         [00:13:35] [Server thread/INFO]:
         [00:13:35] [Server thread/INFO]: TradeShop 2.3.0-DEV by Lori00 & KillerOfPie
         [00:13:35] [Server thread/INFO]:
-        [00:13:35] [Server thread/INFO]: /tradeshop   Display help message
-        [00:13:35] [Server thread/INFO]: /ts help   Display help message
-        [00:13:35] [Server thread/INFO]: /ts setup   Display shop setup tutorial
-        [00:13:35] [Server thread/INFO]: /ts bugs   Report bugs to the developers
-        [00:13:35] [Server thread/INFO]: /ts playerlevel If Internal Permissions is enable this allows the getting and setting of player permission levels.
-        [00:13:35] [Server thread/INFO]: /ts reload   Reload configuration files
+        [00:13:35] [Server thread/INFO]: /negozi   Display help message
+        [00:13:35] [Server thread/INFO]: /n help   Display help message
+        [00:13:35] [Server thread/INFO]: /n setup   Display shop setup tutorial
+        [00:13:35] [Server thread/INFO]: /n bugs   Report bugs to the developers
+        [00:13:35] [Server thread/INFO]: /n playerlevel If Internal Permissions is enable this allows the getting and setting of player permission levels.
+        [00:13:35] [Server thread/INFO]: /n reload   Reload configuration files
         [00:13:35] [Server thread/INFO]:                                                    
         ```
 
@@ -72,7 +72,7 @@ body:
       options:
         - label: I have searched for and ensured there isn't already an open issue regarding this.
           required: true
-        - label: My version of Minecraft and TradeShop are supported by the TradeShop Dev Team (when in doubt, first ask on the [Discord](https://discord.link/TradeShopPlugin)).
+        - label: My version of Minecraft and TradeShop are supported by the TradeShop Dev Team (when in doubt, first ask on the [Discord](https://discord.link/negoziPlugin)).
           required: true
 
   - type: textarea

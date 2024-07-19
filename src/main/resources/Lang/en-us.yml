@@ -239,8 +239,8 @@ message:
       default: "&cThis shop is missing the below items for the trade! \n{%MISSINGITEMS%=  &e%AMOUNT% %ITEM%}"
       pre-comment: "Text to display when the shop does not have enough items:"
     invalid-arguments:
-      default: "&eTry &6/tradeshop help &eto display help!"
-      pre-comment: "Text to display when invalid arguments are submitted through the \"/tradeshop\" command:"
+      default: "&eTry &6/negozi help &eto display help!"
+      pre-comment: "Text to display when invalid arguments are submitted through the \"/negozi\" command:"
     item-added:
       default: "&aItem successfully added to shop."
     item-not-removed:
@@ -300,7 +300,7 @@ message:
       pre-comment: "Text to display when a player tries to buy form a shop in which they are a user"
     setup-help:
       default: "\n&2Setting up a TradeShop is easy! Just make sure to follow these steps:\n \nStep 1: &ePlace down a chest.\n&2Step 2: &ePlace a sign on top of or around the chest.\n&2Step 3: &eWrite the following on the sign\n&6 [%HEADER%]\n&6&o-- Leave Blank --\n&6&o-- Leave Blank --\n&6&o-- Leave Blank --\n&2Step 4: &eUse the addCost and addProduct commands to add items to your shop"
-      pre-comment: "Text to display on \"/tradeshop setup\":"
+      pre-comment: "Text to display on \"/negozi setup\":"
     shop-closed:
       default: "&cThis shop is currently closed."
     shop-empty:
@@ -313,7 +313,7 @@ message:
       default: "&aThe shops %TYPE%:\n%LIST%"
     shop-type-switched:
       default: "&aShop type has been switched to %NEWTYPE%."
-      pre-comment: "Text to display when a player uses '/ts toggle'\n Available variables are: %TYPE% %NEWTYPE%"
+      pre-comment: "Text to display when a player uses '/n toggle'\n Available variables are: %TYPE% %NEWTYPE%"
     successful-setup:
       default: "&aYou have successfully setup a TradeShop!"
       pre-comment: "Text to display when a player successfully creates a TradeShop:"
@@ -344,7 +344,7 @@ message:
       pre-comment: "Text to display when players use the who command"
     view-player-level:
       default: "&e%PLAYER% has a level of %LEVEL%."
-      pre-comment: "Text to display when viewing a players level with /ts PlayerLevel"
+      pre-comment: "Text to display when viewing a players level with /n PlayerLevel"
     set-player-level:
       default: "&aYou have set the level of %PLAYER% to %LEVEL%!"
       pre-comment: "Text to display after setting a players level"
@@ -363,7 +363,7 @@ message:
       default: "&aYour Admin mode is currently &e%STATE%&a."
       pre-comment: "Text to display when an admin toggles or views their Admin abilities. \n# \"%STATE%\" will be replaced by the state that the player is in after the command."
     failed-trade:
-      default: "&cThe Trade has failed for unknown reasons, please notify an Admin or submit a bug report using '/ts bug'!"
+      default: "&cThe Trade has failed for unknown reasons, please notify an Admin or submit a bug report using '/n bug'!"
       pre-comment: "Text to display when a player is too far from a sign"
 permission:
   help:

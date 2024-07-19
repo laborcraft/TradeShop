@@ -90,7 +90,7 @@ shop-options:
   allow-user-purchasing: false
   # Text that shows on trade signs that contain more than 1 item
   # Available variables are: %AMOUNT%
-  multiple-items-on-sign: Use '/ts what'
+  multiple-items-on-sign: Use '/n what'
 
 
 # |    Trade Shop Options    |

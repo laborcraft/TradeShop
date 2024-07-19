@@ -37,7 +37,7 @@ insufficient-items: |-
 shop-insufficient-items: |-
   &cA questo negozio mancano i seguenti oggetti per fare lo scambio:
   {%MISSINGITEMS%=  &b%AMOUNT% %ITEM%}
-# Text to display when invalid arguments are submitted through the "/tradeshop" command:
+# Text to display when invalid arguments are submitted through the "/negozi" command:
 invalid-arguments: '&bUsa &6/negozi aiuto &bper mostrare la pagina di aiuto!'
 item-added: '&7Item aggiunto con successo al negozio.'
 item-not-removed: '&cNon è stato possibile rimuovere l''oggetto dal negozio.'
@@ -75,11 +75,11 @@ player-only-command: '&bQuesto comando è disponibile solo per i giocatori.'
 plugin-behind: '&cPer favore aggiorna TradeShop.'
 # Text to display when a player tries to buy form a shop in which they are a user
 self-owned: '&cNon puoi comprare da un negozio di cui sei un utente.'
-# Text to display on "/tradeshop setup":
+# Text to display on "/negozi setup":
 setup-help: "\n&2Impostare un negozio è facile! Segui questi passi:\n \n&21. &bPiazza una cassa.\n\
-  &22. &bPiazza un cartello sopra o attorno la cassa.\n&23. &bSCrivi, nella prima\
-  \ linea del cartello:\n&6 [%HEADER%]\n&24. &bUsa i comandi &faddProduct <numero>\
-  \ &be &faddCost <numero> &bper impostare rispettivamente ciò che vendi e ciò che\
+  &22. &bPiazza un cartello attaccato alla cassa (o sopra).\n&23. &bScrivi, nella prima\
+  \ linea del cartello: &6 [%HEADER%]\n&24. &bUsa i comandi &fimpostaProdotto <numero>\
+  \ &be &fimpostaPagamento <numero> &bper impostare rispettivamente ciò che vendi e ciò che\
   \ compri."
 shop-closed: '&cQuesto negozio è attualmente chiuso.'
 # Text to display when the shop does not have enough stock:
@@ -89,7 +89,7 @@ shop-full: '&cQuesto negozio è pieno! Contatta il proprietario per farlo svuota
 shop-item-list: |-
   &7%TYPE% del negozio:
   %LIST%
-# Text to display when a player uses '/ts toggle'
+# Text to display when a player uses '/n toggle'
 # Available variables are: %TYPE% %NEWTYPE%
 shop-type-switched: '&7Il tipo di negozio è stato cambiato a %NEWTYPE%.'
 # Text to display when a player successfully creates a TradeShop:
@@ -111,9 +111,9 @@ updated-shop-users-failed-missing: '&bGiocatore mancante'
 who-message: |-
   &6Gli utenti del negozio sono:
   &2Proprietario: &b%OWNER%
-  &2Manager: &b%MANAGERS%
+  &2Gestori: &b%MANAGERS%
   &2Membri: &b%MEMBERS%
-# Text to display when viewing a players level with /ts PlayerLevel
+# Text to display when viewing a players level with /n PlayerLevel
 view-player-level: '&b%PLAYER% ha un livello di %LEVEL%.'
 # Text to display after setting a players level
 set-player-level: '&7Hai impostato il livello di %PLAYER% a %LEVEL%!'

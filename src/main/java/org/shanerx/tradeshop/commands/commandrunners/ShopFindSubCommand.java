@@ -76,7 +76,7 @@ public class ShopFindSubCommand extends SubCommand {
                 if (desiredRange > 0) {
 
                     ArrayList<String> lowerArgs = (getArgs().stream().map(String::toLowerCase).collect(Collectors.toCollection(ArrayList::new)));
-                    lowerArgs.remove("find");
+                    lowerArgs.remove("trova");
 
                     List<Shop> shops = new ArrayList<>();
 
@@ -90,25 +90,20 @@ public class ShopFindSubCommand extends SubCommand {
                             }
 
                             switch (keyVal[0]) {
-                                case "c":
-                                case "cost":
+                                case "pa":
+                                case "pagamento":
                                     desiredCost.putAll(processItemDesires(keyVal[1]));
                                     break;
-                                case "p":
-                                case "product":
+                                case "pr":
+                                case "prodotto":
                                     desiredProduct.putAll(processItemDesires(keyVal[1]));
                                     break;
-                                case "s":
-                                case "in-stock":
-                                case "instock":
-                                case "stock":
+                                case "in-servizio":
                                     ObjectHolder<?> stock = new ObjectHolder<>(keyVal[1]);
                                     inStock = stock.asBoolean();
                                     break;
                                 case "d":
-                                case "r":
-                                case "distance":
-                                case "range":
+                                case "distanza":
                                     ObjectHolder<?> dist = new ObjectHolder<>(keyVal[1]);
                                     desiredRange = (dist.canBeInteger() && dist.asInteger() < desiredRange) ?
                                             dist.asInteger():
@@ -150,8 +145,8 @@ public class ShopFindSubCommand extends SubCommand {
                                                 Arrays.asList(
                                                         shop.getShopType().toString(),
                                                         shop.getStatus().getLine(),
-                                                        "Cost: " + shop.getSideListNames(ShopItemSide.COST).toString(),
-                                                        "Product: " + shop.getSideListNames(ShopItemSide.PRODUCT))
+                                                        "Prezzo: " + shop.getSideListNames(ShopItemSide.COST).toString(),
+                                                        "Prodotto: " + shop.getSideListNames(ShopItemSide.PRODUCT))
                                         )).create()));
 
                         foundShops.add(message);

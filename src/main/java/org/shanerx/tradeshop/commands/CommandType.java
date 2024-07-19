@@ -53,10 +53,10 @@ public enum CommandType {
 
     // Shop user management commands
     REMOVE_USER(Lists.newArrayList("rimuoviUtente"), Permissions.NONE, 2, 3, true, "Rimuove un utente dal negozio", "/negozi $cmd$ <Name> [all shops]"),
-    ADD_MANAGER(Lists.newArrayList("aggiungiManager"), Permissions.NONE, 2, 3, true, "Aggiunge un manager ad un negozio", "/negozi $cmd$ <name> [all shops]"),
+    ADD_MANAGER(Lists.newArrayList("aggiungiGestore"), Permissions.NONE, 2, 3, true, "Aggiunge un gestore ad un negozio", "/negozi $cmd$ <name> [all shops]"),
     ADD_MEMBER(Lists.newArrayList("aggiungiMembro"), Permissions.NONE, 2, 3, true, "Aggiunge un membro ad un negozio", "/negozi $cmd$ <name> [all shops]"),
-    SET_MANAGER(Lists.newArrayList("impostaManager"), Permissions.NONE, 2, 3, true, "Imposta un giocatore come manager di un negozio", "/negozi $cmd$ <name> [all shops]"),
-    SET_MEMBER(Lists.newArrayList("setMembro"), Permissions.NONE, 2, 3, true, "Imposta un giocatore come membro di un negozio", "/negozi $cmd$ <name> [all shops]"),
+    SET_MANAGER(Lists.newArrayList("impostaGestore"), Permissions.NONE, 2, 3, true, "Imposta un giocatore come gestore di un negozio", "/negozi $cmd$ <name> [all shops]"),
+    SET_MEMBER(Lists.newArrayList("impostaMembro"), Permissions.NONE, 2, 3, true, "Imposta un giocatore come membro di un negozio", "/negozi $cmd$ <name> [all shops]"),
 
     // Shop item management commands
     //ADD_PRODUCT(Lists.newArrayList("aggiungiProdotto"), Permissions.NONE, 1, 3, true, "Aggiungi un prodotto al negozio", "/negozi $cmd$ [Amount] [Material]"),
@@ -64,7 +64,7 @@ public enum CommandType {
     SET_PRODUCT(Lists.newArrayList("impostaProdotto"), Permissions.NONE, 1, 3, true, "Imposta il prodotto del negozio", "/negozi $cmd$ [Amount] [Material]"),
     SET_COST(Lists.newArrayList("impostaPagamento"), Permissions.NONE, 1, 3, true, "Imposta il pagamendo del negozio", "/negozi $cmd$ [Amount] [Material]"),
     REMOVE_PRODUCT(Lists.newArrayList("rimuoviProdotto"), Permissions.NONE, 1, 2, true, "Rimuovi un prodotto dal negozio", "/negozi $cmd$ <List #>"),
-    REMOVE_COST(Lists.newArrayList("removeCost", "delCost"), Permissions.NONE, 1, 2, true, "Rimuovi un pagamento dal negozio", "/negozi $cmd$ <List #>"),
+    REMOVE_COST(Lists.newArrayList("rimuoviPagamento"), Permissions.NONE, 1, 2, true, "Rimuovi un pagamento dal negozio", "/negozi $cmd$ <List #>"),
     //LIST_PRODUCT(Lists.newArrayList("listProduct"), Permissions.NONE, 1, 1, true, "Lista i prodotti del negozio", "/negozi $cmd$"),
     //LIST_COST(Lists.newArrayList("listCost"), Permissions.NONE, 1, 1, true, "Lisa i pagamenti del negozio", "/negozi $cmd$"),
 
@@ -74,7 +74,7 @@ public enum CommandType {
     MULTI(Lists.newArrayList("moltiplicatore"), Permissions.NONE, 1, 2, true, "Cambia il moltiplicatore di scambi per questa sessione", "/negozi $cmd$ <Amount>"),
     STATUS(Lists.newArrayList("stato"), Permissions.INFO, 1, 2, true, "Mostra lo stato di tutti i negozi in cui il giocatore è coinvolto", "/negozi $cmd$ [Name]"),
     TOGGLE_STATUS(Lists.newArrayList("cambiastatus"), Permissions.INFO, 1, 1, true, "Cambia il messaggio di login contenente la lista dei negozi in cui il giocatore è coinvolto", "/negozi $cmd$"),
-    FIND(Lists.newArrayList("trova"), Permissions.FIND, 2, 50, true, "Trova negozi vicini. <Parametri> può includere \n'cost=item1,item2,item3;'\n'product=item1,item2,item3;'\n'distance=numero'\n    '|' può essere usato al posto delle virgole nella lista se preferisci.\n    Le liste si leggono da destra a sinistra, quindi 'minecraft:dirt|minecraft:stone,minecraft:dirt' sarebbe terra di (pietra e terra). Un negozio con solo pietra non verrebbe trovato così.", "/negozi $cmd$ <Search Paramaters>"),
+    FIND(Lists.newArrayList("trova"), Permissions.FIND, 2, 50, true, "Trova negozi vicini. <Parametri> può includere \n'prezzo=item1,item2,item3;'\n'prodotto=item1,item2,item3;'\n'distanza=numero'\n    '|' può essere usato al posto delle virgole nella lista se preferisci.\n    Le liste si leggono da destra a sinistra, quindi 'minecraft:dirt|minecraft:stone,minecraft:dirt' sarebbe terra o (pietra e terra). Un negozio con solo pietra non verrebbe trovato così.", "/negozi $cmd$ <Parametri>"),
 
     // Other commands
     HELP(Lists.newArrayList("aiuto", "?"), Permissions.HELP, 1, 2, false, "Mostra il messaggio di aiuto", "/negozi $cmd$ [command]"),
