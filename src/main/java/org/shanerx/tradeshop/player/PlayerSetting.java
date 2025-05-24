@@ -53,7 +53,8 @@ public class PlayerSetting implements Serializable {
     private final String uuidString;
     private final Set<String> ownedShops;
     private final Set<String> staffShops;
-    private boolean showInvolvedStatus, adminEnabled = true;
+    private boolean showInvolvedStatus = false;
+    private boolean adminEnabled = true;
 
     private int multi = Setting.MULTI_TRADE_DEFAULT.getInt();
 
@@ -280,7 +281,7 @@ public class PlayerSetting implements Serializable {
     }
 
     public boolean showInvolvedStatus() {
-        return showInvolvedStatus;
+        return false; //unneeded // return showInvolvedStatus;
     }
 
     public void setShowInvolvedStatus(boolean showInvolvedStatus) {
