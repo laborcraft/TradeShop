@@ -1,4 +1,6 @@
-# TradeShop
+# TradeShop - Laborcraft fork
+
+This is a fork of Tradeshop made for Laborcraft, with italian translation and some customizations. The project works until 1.21.4.
 
 ![GH Actions](https://github.com/Tradeshop/TradeShop/workflows/Java%20CI%20with%20Maven/badge.svg)
 [![Build Status](https://jenkins.killerofpie.com/job/tradeshop/badge/icon?style=plastic&subject=TradeShop%20Jenkins)](https://jenkins.killerofpie.com/job/tradeshop/)
